@@ -1,0 +1,143 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  padding-top: 60px; 
+}
+.main-header {
+  background: #ffffff;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+}
+
+.header-title {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.header-nav a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.header-nav a:hover {
+  color: #4B1E16;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #000000;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; 
+  }
+
+  .main-header {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  .header-left {
+    gap: 8px;
+  }
+
+  .header-logo {
+    height: 45px;
+    width: 45px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #eee;
+    padding: 20px 16px;
+    gap: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .header-nav.open {
+    display: flex;
+  }
+
+  .header-nav a {
+    font-size: 18px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .header-nav a:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 8px 12px;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-logo {
+    height: 40px;
+    width: 40px;
+  }
+}

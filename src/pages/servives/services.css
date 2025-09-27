@@ -1,0 +1,411 @@
+.services-container {
+  background: #f7f4f2;
+  min-height: 100vh;
+  padding: 48px 0 0 0; 
+  text-align: center;
+  width: 100vw; 
+  margin-left: calc(-50vw + 50%); 
+}
+
+.services-title {
+  color: #4B1E16;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding: 0 32px; 
+}
+
+.services-desc {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 36px auto;
+  line-height: 1.5;
+  padding: 0 32px; 
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  justify-items: center;
+  margin-top: 16px;
+  padding: 0 32px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.capability-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  padding: 0 0 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 220px;
+}
+
+.capability-card img {
+  width: 220px;
+  height: 120px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  margin-bottom: 10px;
+}
+
+.capability-card h2 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 10px;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.services-quote {
+  background: #642c1c;
+  color: #f7d89c;
+  border-radius: 36px;
+  margin: 48px 32px 0 32px; 
+  padding: 48px 32px 36px 32px;
+  position: relative;
+  text-align: center;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-quote p {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin: 0;
+  color: #f7d89c;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.quote-icon {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #f7d89c;
+  position: absolute;
+}
+
+.quote-icon.left {
+  left: 36px;
+  top: 32px;
+}
+
+.quote-icon.right {
+  right: 36px;
+  bottom: 32px;
+}
+
+.workshops-section {
+  background: #fbe8c7;
+  padding: 48px 0 40px 0; 
+  margin: 48px 0 0 0; 
+  width: 100vw; 
+  margin-left: calc(-50vw + 50%); 
+}
+
+.workshops-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  padding: 0 32px; 
+}
+
+.workshops-header h2 {
+  color: #642c1c;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+.workshops-slideshow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.slides-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.slides-wrapper {
+  display: flex;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.slide {
+  min-width: 100%;
+  height: 300px;
+  transform: translateZ(0);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateZ(0);
+  image-rendering: optimizeSpeed;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  transform: translateZ(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slides-wrapper {
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .workshops-slideshow {
+    max-width: 600px;
+    gap: 15px;
+  }
+  
+  .slide-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .slide {
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .workshops-slideshow {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  .slides-container {
+    width: 100%;
+  }
+  
+  .slide {
+    height: 200px;
+  }
+  
+  .slide-indicators {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services-title {
+    font-size: 2.2rem;
+    padding: 0 24px;
+  }
+  
+  .services-desc {
+    font-size: 1rem;
+    padding: 0 24px;
+  }
+  
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 24px;
+  }
+  
+  .workshops-cards {
+    padding: 0 24px;
+    gap: 20px;
+  }
+  
+  .services-quote {
+    margin: 40px 24px 0 24px;
+    padding: 40px 24px 32px 24px;
+  }
+  
+  .workshops-header {
+    padding: 0 24px;
+  }
+  
+  .workshops-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-container {
+    padding: 32px 0 0 0;
+  }
+  
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 16px;
+    padding: 0 16px;
+  }
+  
+  .capability-card {
+    max-width: 100%; 
+  }
+  
+  .capability-card img {
+    width: 100%; 
+    height: 100px;
+  }
+  
+  .workshops-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 16px;
+  }
+  
+  .services-title,
+  .services-desc {
+    padding: 0 16px;
+  }
+  
+  .services-quote {
+    margin: 32px 16px 0 16px;
+    padding: 32px 20px 24px 20px;
+    border-radius: 24px;
+  }
+  
+  .services-quote p {
+    font-size: 1.1rem;
+  }
+  
+  .workshops-header {
+    padding: 0 16px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .workshops-header h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-title {
+    font-size: 1.8rem;
+    padding: 0 8px;
+  }
+  
+  .services-desc {
+    font-size: 0.95rem;
+    padding: 0 8px;
+  }
+  
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Force 2 columns */
+    gap: 12px;
+    padding: 0 8px;
+  }
+  
+  .capability-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .capability-card img {
+    width: 100%;
+    height: 80px; /* Smaller height for mobile */
+    object-fit: cover;
+  }
+  
+  .capability-card h2 {
+    font-size: 0.85rem;
+    margin: 8px 0 4px 0;
+  }
+  
+  .workshops-cards {
+    grid-template-columns: 1fr; 
+    gap: 12px;
+    padding: 0 8px;
+  }
+  
+  .workshop-card {
+    max-width: 100%;
+    width: 100%;
+    height: 200px;
+  }
+  
+  .services-quote {
+    margin: 24px 8px 0 8px;
+    padding: 24px 16px 20px 16px;
+    border-radius: 20px;
+  }
+  
+  .services-quote p {
+    font-size: 1rem;
+  }
+  
+  .quote-icon {
+    font-size: 1.8rem;
+  }
+  
+  .quote-icon.left {
+    left: 20px;
+    top: 20px;
+  }
+  
+  .quote-icon.right {
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  .workshops-header {
+    padding: 0 8px;
+  }
+  
+  .workshops-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .workshops-learn-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
