@@ -35,7 +35,6 @@ const workshops = [
 ]
 const Services = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
   const containerRef = useRef(null)
 
   useEffect(() => {
@@ -49,7 +48,6 @@ const Services = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
         }
       },
       { threshold: 0.1 }
