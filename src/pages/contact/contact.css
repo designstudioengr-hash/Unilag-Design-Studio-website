@@ -5,8 +5,8 @@ html {
   background: #fbe8c7;
   min-height: 100vh;
   padding: 48px 0 40px 0; 
-  width: 100vw; 
-  margin-left: calc(-50vw + 50%); 
+  width: 100%; 
+  margin: 0; 
 }
 
 .contact-title {
@@ -28,18 +28,6 @@ html {
   margin-right: auto;
 }
 
-.testimonial-img {
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  width: 260px;
-  min-width: 180px;
-  height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .testimonial-quote {
   background: #ffd98a;
   border-radius: 20px;
@@ -57,8 +45,8 @@ html {
   font-size: 2rem;
   color: #fff;
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 15px;
+  left: 18px;
 }
 
 .testimonial-quote p {
@@ -233,7 +221,7 @@ html {
   .testimonial-quote {
     padding: 28px 24px 20px 24px;
   }
-  
+ 
   .faq-content {
     padding: 0 24px;
     gap: 32px;
@@ -275,6 +263,10 @@ html {
     width: 100%;
     padding: 24px 20px 18px 20px;
   }
+   .testimonial-quote-icon {
+  top: 6px;
+    left: 16px;
+}
   
   .testimonial-nav {
     flex-direction: row;
@@ -361,6 +353,10 @@ html {
     font-size: 0.9rem;
     line-height: 1.5;
   }
+  .testimonial-quote-icon {
+  top: 6px;
+  left: 18px;
+}
   
   .faq-content {
     padding: 0 8px;
@@ -394,7 +390,7 @@ html {
   
   .testimonial-quote-icon {
     font-size: 1.5rem;
-    top: 16px;
+    top: 6px;
     left: 16px;
   }
   

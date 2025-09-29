@@ -1,8 +1,6 @@
 footer {
     background-color: #000;
-    border-top-left-radius: 32px;
-    border-top-right-radius: 32px;
-    height: 325px;
+    height: 100%;
     padding: 48px 0 0 0;
     width: 100vw; 
     margin-left: calc(-50vw + 50%);
@@ -120,7 +118,6 @@ footer {
     color: #ccc;
 }
 
-/* Add responsive styles for footer */
 
 @media (max-width: 1024px) {
   footer {

@@ -3,8 +3,8 @@
   min-height: 100vh;
   padding: 48px 0 0 0; 
   text-align: center;
-  width: 100vw; 
-  margin-left: calc(-50vw + 50%); 
+  width: 100%;
+  margin: 0;
 }
 
 .services-title {
@@ -95,12 +95,12 @@
   position: absolute;
 }
 
-.quote-icon.left {
+.quote-icon .left {
   left: 36px;
   top: 32px;
 }
 
-.quote-icon.right {
+.quote-icon .right {
   right: 36px;
   bottom: 32px;
 }
@@ -387,13 +387,13 @@
   }
   
   .quote-icon.left {
-    left: 20px;
-    top: 20px;
+    left: 15px;
+    top: 13px;
   }
   
   .quote-icon.right {
     right: 20px;
-    bottom: 20px;
+    bottom: 5px;
   }
   
   .workshops-header {
