@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import './about.css'
 
 import img1 from '../../assets/focus.png'
@@ -35,6 +36,36 @@ const themes = [
 
 ]
 
+interface LazyImageProps {
+  src: string;
+  alt: string;
+}
+
+const LazyImage: React.FC<LazyImageProps> = ({ src, alt }) => {
+  const [imageSrc, setImageSrc] = useState('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')
+  const imageRef = useRef<HTMLImageElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setImageSrc(src)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [src])
+
+  return <img ref={imageRef} src={imageSrc} alt={alt} />
+}
+
 const About = () => {
 	return (
 		<div id='about' className="about-container">
@@ -46,12 +77,11 @@ const About = () => {
 						Drive Our Innovation
 					</h1>
 				</div>
-				{/* <button className="about-learn-btn">Learn More</button> */}
 			</div>
 			<div className="themes-grid">
 				{themes.map((theme, idx) => (
 					<div className="theme-card" key={idx}>
-						<img src={theme.img} alt={theme.title} />
+						<LazyImage src={theme.img} alt={theme.title} />
 						<div className="theme-content">
 							<h2>{theme.title}</h2>
 							<p>{theme.desc}</p>

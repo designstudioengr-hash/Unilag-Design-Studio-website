@@ -1,5 +1,36 @@
+import { useState, useEffect, useRef } from 'react'
 import './home.css'
 import unilagGate from '../../assets/school.png'
+
+interface LazyImageProps {
+  src: string;
+  alt: string;
+}
+
+const LazyImage: React.FC<LazyImageProps> = ({ src, alt }) => {
+  const [imageSrc, setImageSrc] = useState('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')
+  const imageRef = useRef<HTMLImageElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setImageSrc(src)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [src])
+
+  return <img ref={imageRef} src={imageSrc} alt={alt} />
+}
 
 const Home = () => {
   return (
@@ -15,7 +46,7 @@ const Home = () => {
           </div>
         </div>
         <div className="hero-image">
-          <img src={unilagGate} alt="UNILAG Gate" />
+          <LazyImage src={unilagGate} alt="UNILAG Gate" />
         </div>
       </section>
       <section className="about-section">
@@ -26,7 +57,6 @@ const Home = () => {
            The studio serves as a vibrant innovation hub where students, faculty, and professionals converge to tackle real-world challenges through
             <span className="about-highlight"> design, engineering, and technology.</span>
         </p>
-        {/* <button type='button' title='learn more' className="learn-more-btn">Learn More</button> */}
       </section>
     </div>
   )

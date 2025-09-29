@@ -33,6 +33,36 @@ const workshops = [
   { img: img12},
   { img: img13},
 ]
+interface LazyImageProps {
+  src: string;
+  alt: string;
+}
+
+const LazyImage: React.FC<LazyImageProps> = ({ src, alt }) => {
+  const [imageSrc, setImageSrc] = useState('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')
+  const imageRef = useRef<HTMLImageElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setImageSrc(src)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [src])
+
+  return <img ref={imageRef} src={imageSrc} alt={alt} />
+}
+
 const Services = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const containerRef = useRef(null)
@@ -40,25 +70,9 @@ const Services = () => {
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev === workshops.length - 1 ? 0 : prev + 1))
-    }, 7000) 
-    return () => clearInterval(slideInterval) 
+    }, 7000)
+    return () => clearInterval(slideInterval)
   }, [workshops.length])
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-        }
-      },
-      { threshold: 0.1 }
-    )
-    
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
-    }
-    
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <div id='services' className="services-container" ref={containerRef}>
@@ -69,7 +83,7 @@ const Services = () => {
       <div className="capabilities-grid">
         {capabilities.map((cap, idx) => (
           <div className="capability-card" key={idx}>
-            <img src={cap.img} alt={cap.title} />
+            <LazyImage src={cap.img} alt={cap.title} />
             <h2>{cap.title}</h2>
           </div>
         ))}
@@ -89,13 +103,13 @@ const Services = () => {
         </div>
         <div className="workshops-slideshow">
           <div className="slides-container">
-            <div 
-              className="slides-wrapper" 
+            <div
+              className="slides-wrapper"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {workshops.map((workshop, idx) => (
                 <div className="slide" key={idx}>
-                  <img src={workshop.img} alt={`Workshop ${idx + 1}`} />
+                  <LazyImage src={workshop.img} alt={`Workshop ${idx + 1}`} />
                 </div>
               ))}
             </div>
