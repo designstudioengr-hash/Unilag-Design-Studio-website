@@ -115,15 +115,6 @@ const Services = () => {
             </div>
           </div>
         </div>
-        <div className="slide-indicators">
-          {workshops.map((_, idx) => (
-            <button title='slide indicator'
-              key={idx}
-              className={`indicator ${currentSlide === idx ? 'active' : ''}`}
-              onClick={() => setCurrentSlide(idx)}
-            />
-          ))}
-        </div>
       </section>
     </div>
   )
