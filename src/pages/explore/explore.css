@@ -1,0 +1,175 @@
+.explore-container {
+  background: #f7f4f2;
+  min-height: 100vh;
+  padding: 60px 20px;
+  margin: 0;
+}
+
+.explore-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4B1E16;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 2.5px solid #4B1E16;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.goal-card {
+  border-top: 10px solid #4B1E16;
+}
+
+.mission-card {
+  border-top: 10px solid #4B1E16;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  color: #4B1E16;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1d1d1d;
+  text-align: justify;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding:  2rem;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem;
+  border: 2.5px solid #4B1E16;
+}
+
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-image img {
+  width: 350px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.project-text {
+  flex: 1;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.project-content {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-container {
+    padding: 40px 15px;
+  }
+
+  .explore-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-content {
+    font-size: 1rem;
+  }
+  .projects-container {
+  padding:  .1rem;
+}
+  .project-card{
+    padding: 0.5rem;
+  }
+  .project-image img {
+  width: 150px;
+  height: 150px;
+}
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    gap: 20px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .explore-title {
+    font-size: 1.75rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+}

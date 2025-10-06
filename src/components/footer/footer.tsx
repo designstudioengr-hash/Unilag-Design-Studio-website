@@ -1,4 +1,5 @@
 import './footer.css'
+import { LinkedInIcon, TwitterIcon, InstaIcon } from '../../assets/svg/svg-export'
 
 const Footer = () => {
   return (
@@ -13,10 +14,11 @@ const Footer = () => {
     </div>
     <div className="footer-links">
       <h1>Socials</h1>
-      <a href="https://www.instagram.com/uds_innovationhub?igsh=MTNqeDBzczh2eGRxNw%3D%3D&utm_source=qr">Instagram</a>
-      {/* <a href="#">YouTube</a> */}
-      <a href="https://www.linkedin.com/in/unilag-design-studio-0235b4235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
-      <a href="https://x.com/unilag_design?s=11">X</a>
+      <div className='social-icons'>
+        <a href="https://www.instagram.com/uds_innovationhub?igsh=MTNqeDBzczh2eGRxNw%3D%3D&utm_source=qr"><InstaIcon/></a>
+      <a href="https://www.linkedin.com/in/unilag-design-studio-0235b4235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><LinkedInIcon/></a>
+      <a href="https://x.com/unilag_design?s=11"><TwitterIcon/></a>
+      </div>
     </div>
     <div className="footer-contact">
       <h1>Contact</h1>

@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef} from 'react'
+import { useNavigate } from 'react-router-dom'
 import './home.css'
-import unilagGate from '../../assets/school.png'
+import unilagGate from '../../assets/school.jpeg'
 
 interface LazyImageProps {
   src: string;
@@ -10,6 +11,7 @@ interface LazyImageProps {
 const LazyImage: React.FC<LazyImageProps> = ({ src, alt }) => {
   const [imageSrc, setImageSrc] = useState('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')
   const imageRef = useRef<HTMLImageElement>(null)
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,6 +35,12 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt }) => {
 }
 
 const Home = () => {
+  const navigate = useNavigate()
+
+  const handleExploreClick = () => {
+    navigate('/explore')
+  }
+
   return (
     <div id="home" className="home-container">
       <section className="hero-section">
@@ -42,7 +50,7 @@ const Home = () => {
             A creative hub powered by UNILAG and RICE360, equipping students with hands-on experience in engineering, healthcare innovation, and cutting-edge technology.
           </p>
           <div className="hero-buttons">
-            <button type='button' title='explore' className="primary-btn">Explore Projects</button>
+            <button type='button' title='explore' className="primary-btn" onClick={handleExploreClick}>Explore Projects</button>
           </div>
         </div>
         <div className="hero-image">

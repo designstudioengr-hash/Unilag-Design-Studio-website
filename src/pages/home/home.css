@@ -24,6 +24,7 @@
   flex: 2;
   color: #fff;
   margin-left: 80px;
+  height: 320px;
 }
 
 .hero-text h1 {
@@ -48,7 +49,7 @@
   flex-wrap: wrap; 
 }
 
-.primary-btn, .secondary-btn, .learn-more-btn {
+.primary-btn {
   border: none;
   border-radius: 22px;
   padding: 10px 28px;
@@ -70,9 +71,9 @@
 }
 
 .hero-image img {
-  width: 370px;
+  width: 410px;
   height: 320px;
-  object-fit: cover;
+  /* object-fit: cover; */
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
 }

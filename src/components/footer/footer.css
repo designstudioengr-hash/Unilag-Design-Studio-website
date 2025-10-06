@@ -51,15 +51,10 @@ footer {
     margin-bottom: 12px;
 }
 
-.footer-links a {
-    font-weight: 400;
-    font-size: 16px;
-    color: #F4F4F4;
-    text-decoration: none;
-    margin-bottom: 4px;
-    transition: text-decoration 0.2s;
-}
-
+.social-icons {
+    display: flex;
+    gap: 12px;
+} 
 .footer-links a:hover {
     text-decoration: underline;
 }
