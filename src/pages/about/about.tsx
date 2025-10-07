@@ -19,7 +19,7 @@ const themes = [
 	desc: 'Learn directly from industry experts and experienced engineers who guide you through real-world challenges.',
 },
 {
-	img: img3,
+	img: img1,
 	title: 'Collaborative Environment',
 	desc: 'Work in a team-driven setting where diverse skills and ideas come together to solve complex problems creatively.',
 },

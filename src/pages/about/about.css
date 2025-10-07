@@ -27,11 +27,12 @@
 
 .themes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 2rem 0;
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .theme-card {
@@ -40,25 +41,14 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(229, 231, 235, 0.8);
+  border: 2px solid #4B1E16;
   position: relative;
 }
+
 
 .theme-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  border-color: rgba(156, 163, 175, 0.4);
-}
-.theme-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .theme-card:hover::before {
@@ -77,20 +67,20 @@
 }
 
 .theme-content {
-  padding: 1.5rem;
+  padding: 0.5rem;
 }
 
 .theme-content h2 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1f2937;
-  margin: 0 0 0.75rem 0;
+  color: #4B1E16;
+  margin: 0 0 0.5rem 0;
   line-height: 1.4;
   transition: color 0.3s ease;
 }
 
 .theme-content p {
-  color: #6b7280;
+  color: #29292b;
   line-height: 1.6;
   margin: 0;
   font-size: 0.95rem;
