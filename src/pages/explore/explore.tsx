@@ -1,25 +1,37 @@
 import './explore.css'
 import { useState, useEffect, useRef } from 'react'
-import img1 from '../../assets/focus.png'
-import img2 from '../../assets/mentor.png'
-import img3 from '../../assets/collaborative.png'
+import trashley from '../../assets/project/trashley.png'
+import biliwrapper from '../../assets/project/biliwrapper.jpeg'
+import attendance from '../../assets/project/attendancepro.png'
+import smokedetector from '../../assets/project/smokedetector.jpeg'
+import neoblankey from '../../assets/project/neoblankey.jpeg'
 
 const projects = [
 	{
-    img: img1,
-		title: 'Project 1',
-		desc: 'A detailed description of Project 1, including its objectives, methodologies, and outcomes.',
+    img: trashley,
+		title: 'Trashley - The Automated Wastebin',
+		desc: 'Trashley is a smart, touchless dustbin that detects users, opens automatically, and ensures hygienic waste disposal. With voice control, a mobile app, and fill-level sensors, it prevents overflow and offers convenience from anywhere.',
 	},
 	{
-    img: img2,
-		title: 'Project 2',
-		desc: 'A detailed description of Project 2, including its objectives, methodologies, and outcomes.',
+    img: biliwrapper,
+		title: 'Smart Biliwrapper',
+		desc: 'The Smart Biliwrapper is an intelligent phototherapy blanket that treats neonatal jaundice using LED light and built-in temperature sensors to ensure safe, effective care. Designed for comfort, portability, and affordability, it offers real-time alerts and an intuitive interface for caregivers, making phototherapy more accessible in low-resource settings.',
 	},
 	{
-    img: img3,
-		title: 'Project 3',
-		desc: 'A detailed description of Project 3, including its objectives, methodologies, and outcomes.',
+    img: attendance,
+		title: 'The Attendance Pro - RFID-Based Attendance System',
+		desc: 'The Attendance Pro is an RFID-based system that automates attendance tracking by recording scans directly into Google Sheets. Powered by an ESP32 microcontroller, it delivers fast, accurate, and secure records while eliminating manual errors and fraud.',
 	},
+  {
+    img: smokedetector,
+    title: 'Smart Smoke Detector with Integrated Ventilation System ',
+    desc: 'The Smart Smoke Detector with Integrated Ventilation System goes beyond alerts by actively reducing smoke during fires. Using Arduino-based sensors and motors, it detects smoke and heat, automatically opens windows and doors, and activates a fan for extraction—offering real protection, not just warnings.',
+  },
+  {
+    img: neoblankey,
+    title: 'NeoBlankey - Neonatal Heating Swaddle Blanket',
+    desc: 'NeoBlankey is an affordable, portable neonatal heating system that prevents hypothermia in newborns. Combining an insulated swaddle, heating compartment, and Arduino-powered control, it maintains safe temperatures between 27°C and 40°C—offering a low-cost alternative to incubators for rural and low-resource healthcare settings.',
+  },
 ]
 
 interface LazyImageProps {
