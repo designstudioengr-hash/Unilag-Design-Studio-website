@@ -2,14 +2,14 @@ import { useState, useEffect, useRef } from 'react'
 import './about.css'
 
 import img1 from '../../assets/focus.png'
-import img2 from '../../assets/mentor.png'
-import img3 from '../../assets/collaborative.png'
+import img2 from '../../assets/mentorship.jpg'
+import engineeringfocus from '../../assets/engineeringfocus.jpg'
 import img4 from '../../assets/handson.png'
 import img5 from '../../assets/summer.png'
 
 const themes = [
 	{
-	img: img1,
+	img: engineeringfocus,
 	title: 'Engineering Focus',
 	desc: 'Driving innovation through practical engineering solutions, with a special emphasis on healthcare technologies that improve and save lives.',
 },
