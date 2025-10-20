@@ -22,7 +22,7 @@ const Footer = () => {
     </div>
     <div className="footer-contact">
       <h1>Contact</h1>
-      <p>+234 813 7500 777</p>
+      <p>+234 916 234 3100</p>
       <p><a href="mailto:designstudio.eng@unilag.edu.ng">designstudio.eng@unilag.edu.ng</a></p>
       <p>UNILAG Design Studio Headquarters:
         3rd Floor Systems Engineering Building,
