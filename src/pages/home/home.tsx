@@ -62,9 +62,9 @@ const Home = () => {
           <p>
             <span className="about-bold">UNILAG Design Studio </span> 
             is a pioneering collaboration between the University of Lagos and the 
-           <span className="about-highlight"> RICE360 Global Institute at Rice University, Houston.</span> 
-           The studio serves as a vibrant innovation hub where students, faculty, and professionals converge to tackle real-world challenges through
-            <span className="about-highlight"> design, engineering, and technology.</span>
+           <span className="about-highlight"> Rice360 Institute for Global Health Technologies at Rice University, Houston.</span> 
+           The studio is a creative innovation hub that equips students, faculty, and professionals with hands‑on experience in engineering, healthcare innovation, and cutting‑edge technology.
+            <span className="about-highlight"> It provides a collaborative environment where diverse talents converge to design, prototype, and launch solutions that address real‑world challenges.</span>
           </p>
         </div>
       </section>
